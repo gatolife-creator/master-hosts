@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./index.css";
+
 function BlockSiteForm() {
   const [site, setSite] = useState("");
 
@@ -16,15 +18,20 @@ function BlockSiteForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={site}
-        onChange={(e) => setSite(e.target.value)}
-        placeholder="Enter a site to block"
-      />
-      <button type="submit">Block</button>
-    </form>
+    <div className="flex justify-center items-center h-screen">
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          className="input input-bordered mr-4"
+          value={site}
+          onChange={(e) => setSite(e.target.value)}
+          placeholder="Enter a site to block"
+        />
+        <button className="btn btn-primary" type="submit">
+          Block
+        </button>
+      </form>
+    </div>
   );
 }
 
